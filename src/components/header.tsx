@@ -48,9 +48,9 @@ export default function Header() {
                 </button>
               </SignInButton>
             </SignedOut>
-            <div className="flex md:hidden">
+            <Link href="/products" className="flex md:hidden">
               <Menu/>
-            </div>
+            </Link>
         </div>
       </header>
     </div>
