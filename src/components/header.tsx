@@ -15,9 +15,9 @@ export default function Header() {
             href="/products"
             className=""
           >
-            IPTV
+            Products
           </Link>
-          <Link
+          {/* <Link
             href="/products"
             className=" "
           >
@@ -34,7 +34,7 @@ export default function Header() {
             className=""
           >
             Add-on
-          </Link>
+          </Link> */}
         </div>
         <div className="flex gap-6 items-center ">
           <SignedIn>
