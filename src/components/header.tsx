@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Bell, Menu } from "lucide-react"
+import {  Menu } from "lucide-react"
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs"
 
 export default function Header() {
@@ -17,28 +17,9 @@ export default function Header() {
           >
             Products
           </Link>
-          {/* <Link
-            href="/products"
-            className=" "
-          >
-            Subscriptions
-          </Link>
-          <Link
-            href="/products"
-            className=""
-          >
-            Games
-          </Link>
-          <Link
-            href="/products"
-            className=""
-          >
-            Add-on
-          </Link> */}
         </div>
         <div className="flex gap-6 items-center ">
           <SignedIn>
-          <Bell/>
               <UserButton />
             </SignedIn>
             <SignedOut>
