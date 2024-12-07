@@ -10,7 +10,7 @@ export default function EventCard({ productId,product,priceDescription }: { prod
   return (
     <div
       onClick={() => router.push(`/products/${productId}`)}
-      className={`bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 cursor-pointer overflow-hidden relative`}
+      className={`bg-white hover:scale-105 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 cursor-pointer overflow-hidden relative`}
     >
       {/* Event Image */}
       {image && (
