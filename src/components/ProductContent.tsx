@@ -27,8 +27,6 @@ export default function ProductContent({
   product: Product;
 }) {
   const { user } = useUser();
-
-  console.log(product);
   const { image, name, description, variations, deliveryInstructions } =
     product;
   const [selectedVariant, setSelectedVariant] = useState(

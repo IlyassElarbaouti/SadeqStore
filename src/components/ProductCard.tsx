@@ -7,7 +7,6 @@ import { Product } from "@/types";
 export default function EventCard({ productId,product,priceDescription }: { productId: string,priceDescription:string,product:Product }) {
   const router = useRouter();
   const {image,name} = product
-console.log(product)
   return (
     <div
       onClick={() => router.push(`/products/${productId}`)}

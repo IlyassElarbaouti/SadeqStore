@@ -1,8 +1,8 @@
 import { getCards } from "@/sanity/schemas/sanity-utils";
-import ProductCard from "./ProductCard";
 import { Ticket } from "lucide-react";
 import Spinner from "./Spinner";
 import { Product } from "@/types";
+import ProductsListFiltered from "./ProductsListFiltered";
 
 
 export default async function EventList() {
@@ -15,9 +15,6 @@ export default async function EventList() {
       </div>
     );
   }
-
-console.log(products)
-
   return (
 
 
@@ -35,9 +32,7 @@ console.log(products)
       {/* Upcoming products Grid */}
       {products.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {products.map((product) => (
-            <ProductCard key={product._id} priceDescription={`from ${product.variations[0].price}$`} product={product} productId={product._id} />
-          ))}
+          <ProductsListFiltered products={products}/>
         </div>
       ) : (
         <div className="bg-gray-50 rounded-lg p-12 text-center mb-12">

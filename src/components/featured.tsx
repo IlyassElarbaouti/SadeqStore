@@ -5,7 +5,6 @@ import Image from "next/image";
 import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import dynamic from "next/dynamic";
 const AnimatedTestimonialsDemo = dynamic(() => import("@/components/services"), { ssr: false });
 
@@ -108,9 +107,7 @@ export const SkeletonOne = () => {
 
 export const SkeletonThree = () => {
   return (
-    <Link
-      href="https://www.youtube.com/watch?v=RPa3_AD1_Vs"
-      target="__blank"
+    <div
       className="relative flex gap-10  h-full group/image"
     >
       <div className="w-full  mx-auto bg-transparent dark:bg-transparent group h-full">
@@ -125,7 +122,7 @@ export const SkeletonThree = () => {
           />
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

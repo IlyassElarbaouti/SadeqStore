@@ -5,6 +5,10 @@ import { Icons } from "./ui/icons";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { useEffect } from "react";
+import queryString from "query-string";
+import { usePathname, useRouter } from "next/navigation";
+
 const ContainerScroll = dynamic(
   () => import("@/components/ContainerScrollAnimation"),
   { ssr: false }
@@ -14,6 +18,21 @@ const Hero = () => {
   useGSAP(() => {
     gsap.to("#hero", { opacity: 1, delay: 2 });
     gsap.to("#cta", { opacity: 1, y: -50, delay: 2 });
+  }, []);
+  const pathname = usePathname();
+  const router = useRouter();
+  useEffect(() => {
+    const url = queryString.stringifyUrl(
+      {
+        url: pathname,
+        query: {
+          search: "",
+        },
+      },
+      { skipEmptyString: true, skipNull: true }
+    );
+
+    router.push(url);
   }, []);
 
   return (
