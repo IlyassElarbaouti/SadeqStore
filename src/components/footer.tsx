@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import {  Facebook, Instagram, Twitter } from "lucide-react";
+import {  Facebook, Instagram } from "lucide-react";
 import TelegramIcon from '@mui/icons-material/Telegram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 export function Footer() {
