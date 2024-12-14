@@ -6,7 +6,7 @@ import ProductsListFiltered from "./ProductsListFiltered";
 
 
 export default async function EventList() {
-  const products:Product[] = await  getCards(1);
+  const products:Product[] = await  getCards();
 
   if (!products) {
     return (

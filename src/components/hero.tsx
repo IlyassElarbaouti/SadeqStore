@@ -44,7 +44,7 @@ const Hero = () => {
               titleComponent={
                 <>
                   <h1 className="text-4xl font-semibold ">
-                    Sadeq Store - the best market for <br />
+                    Store Sadeq - the best market for <br />
                     <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
                       Digital Products
                     </span>

@@ -2,12 +2,14 @@ import { Featured } from "@/components/featured";
 import Hero from "@/components/hero";
 import Highlights from "@/components/hgihlights";
 import HowItWorks from "@/components/howItWorks";
+import Trending from "@/components/Trending";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 export default function Home() {
   return (
     <div className="">
       <Hero />
+      <Trending/>
       <Highlights />
       <HowItWorks />
       <Featured />

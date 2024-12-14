@@ -18,9 +18,9 @@ export const urlForImage = (source: string) => {
   return imageBuilder.image(source).auto("format").fit("max");
 };
 
-export async function getCards(page: number) {
+export async function getCards() {
   const res = await client.fetch(
-    groq`*[_type == "product"] [${25 * (Number(page) - 1 || 0)}...${25 * Number(page || 1)}] {
+    groq`*[_type == "product"] {
       _createdAt,
       _id,
       slug,
@@ -35,6 +35,18 @@ export async function getCards(page: number) {
         price,
         isDefault
       },
+    }`
+
+  );
+  return res;
+}
+export async function getFeatured() {
+  const res = await client.fetch(
+    groq`*[_type == "product" && isFeatured == true] {
+      _id,
+      slug,
+      name,
+      "image": image.asset->url,
     }`
 
   );

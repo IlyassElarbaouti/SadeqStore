@@ -2,7 +2,6 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger);
 import { useEffect, useRef, useState } from "react";
 import { pauseImg, playImg, replayImg, highlightFirstVideo, highlightSecondVideo, highlightThirdVideo } from "@/lib/utils";
 import Image from "next/image";
@@ -14,6 +13,8 @@ interface SlideItem {
   video: string;
   videoDuration: number;
 }
+
+gsap.registerPlugin(ScrollTrigger);
 
 const hightlightsSlides: SlideItem[] = [
   {
@@ -34,8 +35,8 @@ const hightlightsSlides: SlideItem[] = [
   {
     id: 3,
     textLists: [
-      "Whatever you need",
-      "we probably sell",
+      "Whatever digital product you need",
+      "we probably sell it!",
         ],
     video: highlightThirdVideo,
     videoDuration: 2,
@@ -199,10 +200,11 @@ const VideoCarousel = () => {
                   playsInline
                   className={`${list.id === 2 ? "translate-x-44" : ""} pointer-events-none`}
                   preload="auto"
+                  autoPlay
                   muted
                   ref={(el:never) => (videoRef.current[i] = el!)}
                   onEnded={() =>
-                    i !== 3
+                    i !== 2
                       ? handleProcess("video-end", i)
                       : handleProcess("video-last", i)
                   }
